@@ -1,4 +1,12 @@
 import React, { Component } from 'react';
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+import Home from "./Home";
+import Stuff from "./JobOpenings";
+import Contact from "./Contact";
 import logo from './imgs/verizon.jpg';
 import './App.css';
 
@@ -11,6 +19,22 @@ class App extends Component {
           <h1 className="App-title">Welcome to VZ Job Portal</h1>
         </header>
         <br/>
+        <HashRouter>
+       <div class="topnav" id="myTopnav">
+        <h1>Verizon Carrers</h1>
+          <ul className="header">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/JobOpenings">JobOpenings</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
+          </ul>
+          <div className="content">
+          <Route path="/" component={Home}/>
+            <Route path="/JobOpenings" component={Stuff}/>
+            <Route path="/contact" component={Contact}/>
+          </div>
+        </div>
+        </HashRouter>
+        <br/>
         <form>
             <b>Skills:</b>&nbsp;
             <input type="text" name="Skills"/> &nbsp;&nbsp;
@@ -18,45 +42,12 @@ class App extends Component {
             <input type="text" name="loc"/>&nbsp;&nbsp;
             <b>Experience:</b>&nbsp;
             <input type="text" name="exp"/>&nbsp;&nbsp;
-            <button type="submit" form="form" value="Search">Search</button>
+            <button type="submit" formaction="https://www.verizon.com/about/careers" value="Search">Search</button>
         </form>
         <br/>
         
-        <div>
-          <table border="1" align="center" >   
-            
-              <tr bgcolor="	#DDA0DD">
-                <th>JobDetails</th>
-                <th>Description</th>
-                <th>Location</th>
-                <th>Open Date</th>
-              </tr>
-              <tr bgcolor="#FFE4B5">
-                <td>QA LEAD</td>
-                <td>Lead 20 memebr team of ITO Automation</td>
-                <td>Hyderabad</td>
-                <td>June 10 2018</td>
-                </tr>
-                <tr bgcolor="#FFE4B5">
-                <td>QA Manager</td>
-                <td>Manage 40 memebr team of ITO Automation</td>
-                <td>Chennai</td>
-                <td>June 12 2018</td>
-                </tr>
-                <tr bgcolor="#FFE4B5">
-                <td>Analyst</td>
-                <td>software testing</td>
-                <td>Chennai</td>
-                <td>June 12 2018</td>
-                </tr>
-                <tr bgcolor="#FFE4B5">
-                <td>Senior Manager</td>
-                <td>Should able to manager 100 people team</td>
-                <td>Chennai</td>
-                <td>June 12 2018</td>
-                </tr>
-         </table>
-        </div>
+        
+       <br/>
        
         <footer>
           <h6>Powered By SimpleSamosa</h6>
