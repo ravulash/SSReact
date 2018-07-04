@@ -20,7 +20,18 @@ class App extends Component {
             <input type="text" name="exp"/>&nbsp;&nbsp;
             <button type="submit" form="form" value="Search">Search</button>
         </form>
-
+        <div>
+          <table border="1">   
+            <thead>
+              <th>
+                <td>JobDetails</td>
+                <td>Description</td>
+                <td>Location</td>
+                <td>Open Date</td>
+              </th>
+            </thead>
+         </table>
+        </div>
         <footer>
           <h6>Powered By SimpleSamosa</h6>
           </footer>
